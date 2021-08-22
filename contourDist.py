@@ -7,13 +7,16 @@ u = "A002204773"
 labels = sitk.ReadImage(os.path.join(data_prefix, u, "labels.nii.gz"))
 labels_pred = sitk.ReadImage(os.path.join(data_prefix, u, "labels_pred.nii.gz"))
 labels = labels > 0
-labels_pred = labels_pred > 0
-aa=sitk.HausdorffDistanceImageFilter()
-aa.Execute(labels, labels_pred)
-s=aa.GetHausdorffDistance()
-ss=aa.GetAverageHausdorffDistance()
-print(s)
-print(ss)
+labels_pred = labels_pred >0
+# print(labels.GetSize())
+# labels_pred = np.ones((395, 512, 512))
+# labels_pred = sitk.GetImageFromArray(labels_pred)
+# aa=sitk.HausdorffDistanceImageFilter()
+# aa.Execute(labels, labels_pred)
+# s=aa.GetHausdorffDistance()
+# ss=aa.GetAverageHausdorffDistance()
+# print(s)
+# print(ss)
 
 
 
